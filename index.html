@@ -141,10 +141,14 @@
           grid-row: 5/6;
         }
         .menu__block:nth-child(7) {
+          grid-column: 6/16;
+          grid-row: 5/6;
+        }
+        .menu__block:nth-child(8) {
           grid-column: 1/16;
           grid-row: 6/7;
         }
-        .menu__block:nth-child(7) ol {
+        .menu__block:nth-child(8) ol {
           -moz-column-count: 2;
           column-count: 2;
           -moz-column-gap: 3em;
@@ -212,6 +216,14 @@
         </ol>
       </div>
       <div class="menu__block">
+        <h1>Tambahan</h1>
+        <ol>
+          <li v-for="item in menuTambahan" :item="item">
+            <menu-item :item="item"></menu-item>
+          </li>
+        </ol>
+      </div>
+      <div class="menu__block">
         <h1>Cemilan</h1>
         <ol>
           <li v-for="item in menuCemilan" :item="item">
@@ -264,27 +276,27 @@
       const nasigoreng = [
         {
           name: "Nasi Goreng Telor",
-          price: "",
+          price: "Rp. 11.000,-",
           info: "",
         },
         {
           name: "Nasi Goreng Ayam",
-          price: "",
+          price: "Rp. 15.000,-",
           info: "",
         },
         {
           name: "Nasi Goreng Sosis",
-          price: "",
+          price: "Rp. 12.000,-",
           info: "",
         },
         {
           name: "Nasi Goreng Baksio",
-          price: "",
+          price: "Rp. 12.000,-",
           info: "",
         },
         {
           name: "Nasi Goreng Komplit",
-          price: "",
+          price: "Rp. 17.000,-",
           info: "",
         },
       ];
@@ -292,37 +304,42 @@
       const indomie = [
         {
           name: "Internet",
-          price: "",
+          price: "Rp. 13.000,-",
           info: "",
         },
         {
           name: "Internet Keju",
-          price: "",
+          price: "Rp. 14.000,-",
           info: "",
         },
         {
           name: "Indomie Biasa",
-          price: "",
+          price: "Rp. 8.000,-",
           info: "",
         },
         {
           name: "Indomie Telor",
-          price: "",
+          price: "Rp. 10.000,-",
           info: "",
         },
         {
           name: "Indomie Kornet",
-          price: "",
+          price: "Rp. 12.000,-",
           info: "",
         },
         {
           name: "Indomie Spesial",
-          price: "",
+          price: "Rp. 15.000,-",
           info: "",
         },
         {
           name: "Mie Dog Dog",
-          price: "",
+          price: "Rp. 12.000,-",
+          info: "",
+        },
+        {
+          name: "Mie Bubro",
+          price: "Rp. 15.000,-",
           info: "",
         },
       ];
@@ -330,42 +347,42 @@
       const nasivarian = [
         {
           name: "Nasi Omelet",
-          price: "",
+          price: "Rp. 10.000,-",
           info: "",
         },
         {
           name: "Nasi Magelangan",
-          price: "",
+          price: "Rp. 12.000,-",
           info: "",
         },
         {
           name: "Nasi Oseng Ati",
-          price: "",
+          price: "Rp. 12.000,-",
           info: "",
         },
         {
           name: "Nasi Oseng Ayam",
-          price: "",
+          price: "Rp. 14.000,-",
           info: "",
         },
         {
           name: "Nasi Orak Arik Telor",
-          price: "",
+          price: "Rp. 11.000,-",
           info: "",
         },
         {
           name: "Nasi Orak Arik Ayam",
-          price: "",
+          price: "Rp. 16.000,-",
           info: "",
         },
         {
           name: "Nasi Orak Arik Sosis",
-          price: "",
+          price: "Rp. 13.000,-",
           info: "",
         },
         {
           name: "Nasi Orak Arik Bakso",
-          price: "",
+          price: "Rp. 13.000,-",
           info: "",
         },
         {
@@ -378,27 +395,27 @@
       const nasiayam = [
         {
           name: "Nasi Ayam Bali Krispi",
-          price: "",
+          price: "Rp. 16.000,-",
           info: "",
         },
         {
           name: "Nasi Ayam Balap",
-          price: "",
+          price: "Rp. 15.000,-",
           info: "",
         },
         {
           name: "Nasi Ayam Mentega",
-          price: "",
+          price: "Rp. 15.000,-",
           info: "",
         },
         {
           name: "Nasi Ayam Asam Manis",
-          price: "",
+          price: "Rp. 14.000,-",
           info: "",
         },
         {
           name: "Nasi Kulit Krispi",
-          price: "",
+          price: "Rp. 13.000,-",
           info: "",
         },
       ];
@@ -406,17 +423,40 @@
       const cemilan = [
         {
           name: "Gorengan",
-          price: "",
+          price: "Rp. 7.000,-",
           info: "",
         },
         {
           name: "Mix Platter",
-          price: "",
+          price: "Rp. 10.000,-",
           info: "",
         },
         {
           name: "Kentang Goreng",
-          price: "",
+          price: "Rp. 14.000,-",
+          info: "",
+        },
+      ];
+
+      const tambahan = [
+        {
+          name: "Nasi Putih",
+          price: "Rp. 3.000,-",
+          info: "",
+        },
+        {
+          name: "Krupuk",
+          price: "Rp. 1.500,-",
+          info: "",
+        },
+        {
+          name: "Telor",
+          price: "Rp. 3.000,-",
+          info: "",
+        },
+        {
+          name: "Air Putih",
+          price: "Rp. 2.000,-",
           info: "",
         },
       ];
@@ -424,127 +464,127 @@
       const minuman = [
         {
           name: "Good day freeze cookies",
-          price: "",
+          price: "Rp. 7.000,-",
           info: "",
         },
         {
           name: "Good day freeze hazelnut",
-          price: "",
+          price: "Rp. 7.000,-",
           info: "",
         },
         {
           name: "Good day freeze mocafrio",
-          price: "",
+          price: "Rp. 7.000,-",
           info: "",
         },
         {
           name: "Good day freeze oren",
-          price: "",
+          price: "Rp. 7.000,-",
           info: "",
         },
         {
           name: "Good day capuchino",
-          price: "",
+          price: "Rp. 6.000,-",
           info: "",
         },
         {
           name: "Good day all varian 3in1",
-          price: "",
+          price: "Rp. 5.000,-",
           info: "",
         },
         {
           name: "Marimas",
-          price: "",
+          price: "Rp. 4.000,-",
           info: "",
         },
         {
           name: "Nutrisari",
-          price: "",
+          price: "Rp. 4.000,-",
           info: "",
         },
         {
           name: "Coffee mix",
-          price: "",
+          price: "Rp. 4.000,-",
           info: "",
         },
         {
           name: "Susu putih/coklat ",
-          price: "",
+          price: "Rp. 4.000,-",
           info: "",
         },
         {
           name: "Es teh jumbo",
-          price: "",
+          price: "Rp. 5.000,-",
           info: "",
         },
         {
           name: "Es teh manis",
-          price: "",
+          price: "Rp. 3.000,-",
           info: "",
         },
         {
           name: "Es teh tawar",
-          price: "",
+          price: "Rp. 2.500,-",
           info: "",
         },
         {
           name: "Teh manis",
-          price: "",
+          price: "Rp. 3.000,-",
           info: "",
         },
         {
           name: "Teh tawar",
-          price: "",
+          price: "Rp. 2.500,-",
           info: "",
         },
         {
           name: "Lemon tea",
-          price: "",
+          price: "Rp. 4.000,-",
           info: "",
         },
         {
           name: "Teh tarik",
-          price: "",
+          price: "Rp. 6.000,-",
           info: "",
         },
         {
           name: "Drink beng beng",
-          price: "",
+          price: "Rp. 6.000,-",
           info: "",
         },
         {
           name: "Milo",
-          price: "",
+          price: "Rp. 7.000,-",
           info: "",
         },
         {
           name: "Extra joss",
-          price: "",
+          price: "Rp. 4.000,-",
           info: "",
         },
         {
           name: "Kopi hitam",
-          price: "",
+          price: "Rp. 4.000,-",
           info: "",
         },
         {
           name: "Susu jahe",
-          price: "",
+          price: "Rp. 5.000,-",
           info: "",
         },
         {
           name: "Jahe wangi",
-          price: "",
+          price: "Rp. 4.000,-",
           info: "",
         },
         {
           name: "Chocolatos",
-          price: "",
+          price: "Rp. 5.000,-",
           info: "",
         },
         {
           name: "White coffee",
-          price: "",
+          price: "Rp. 4.000,-",
           info: "",
         },
       ];
@@ -568,6 +608,7 @@
             menuNasiVarian: nasivarian,
             menuNasiAyam: nasiayam,
             menuCemilan: cemilan,
+            menuTambahan: tambahan,
             menuMinuman: minuman,
           };
         },
