@@ -1,571 +1,582 @@
-<link rel="shortcut icon" type="image/ico" href="burbro.ico" />
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&family=Kaushan+Script&display=swap");
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" /> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <link rel="shortcut icon" type="image/ico" href="burbro.ico" />
+    <title>Menu Burbro</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&family=Kaushan+Script&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  body {
-    font-family: "Open Sans", sans-serif;
-    background-color: #1a4d2e;
-    background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
-  }
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #1a4d2e;
+        background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
+      }
 
-  .menu {
-    padding: 2em;
-  }
-  .menu__block:nth-child(1) {
-    padding: 2em 1em;
-    grid-column: 1/12;
-    text-align: center;
-    color: #ff9e29;
-  }
-  .menu__block:nth-child(1) h2 {
-    font-family: "Kaushan Script", serif;
-    font-size: 6rem;
-  }
-  .menu__block:nth-child(1) h4 {
-    letter-spacing: 4px;
-    font-size: 22px;
-  }
-  .menu__block h1 {
-    font-family: "Bebas Neue", sans-serif;
-    letter-spacing: 3px;
-    padding: 5px 0 5px 10px;
-    color: #ff9e29;
-    background-color: #331803;
-    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
-  }
-  .menu__block picture {
-    display: block;
-    height: 300px;
-    overflow: hidden;
-    -o-object-fit: cover;
-    object-fit: cover;
-    margin: 40px 0 10px 0;
-  }
-  .menu__block picture img {
-    width: 100%;
-  }
-  .menu__block ol {
-    list-style: none;
-    padding: 2em 10px 1em 10px;
-  }
-  .menu__block > span {
-    display: block;
-    font-style: italic;
-    padding: 10px;
-  }
+      .menu {
+        padding: 3em;
+      }
+      .menu__block:nth-child(1) {
+        padding: 2em 1em;
+        grid-column: 1/16;
+        text-align: center;
+        color: #ff9e29;
+      }
+      .menu__block:nth-child(1) h2 {
+        font-family: "Kaushan Script", serif;
+        font-size: 6rem;
+      }
+      .menu__block:nth-child(1) h4 {
+        letter-spacing: 4px;
+        font-size: 22px;
+      }
+      .menu__block h1 {
+        font-family: "Bebas Neue", sans-serif;
+        letter-spacing: 3px;
+        padding: 5px 0 5px 10px;
+        color: #ff9e29;
+        background-color: #331803;
+        background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+      }
+      /* .menu__block picture {
+        display: block;
+        height: 300px;
+        overflow: hidden;
+        -o-object-fit: cover;
+        object-fit: cover;
+        margin: 40px 0 10px 0;
+      }
+      .menu__block picture img {
+        width: 100%;
+      } */
+      .menu__block ol {
+        list-style: none;
+        padding: 2em 10px 1em 10px;
+      }
+      .menu__block > span {
+        display: block;
+        font-style: italic;
+        padding: 10px;
+      }
 
-  .shell {
-    padding: 5px 0;
-  }
-  .shell__item {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-    color: white;
-  }
-  .shell__info {
-    font-style: italic;
-    margin: 5px 0px 20px 0px;
-    padding: 2px;
-    color: white;
-  }
+      .shell {
+        padding: 5px 0;
+      }
+      .shell__item {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        color: white;
+      }
+      .shell__info {
+        font-style: italic;
+        margin: 5px 0px 20px 0px;
+        padding: 2px;
+        color: white;
+      }
 
-  .shell-drinks {
-    padding: 5px 0;
-  }
-  .shell-drinks__item {
-    display: grid;
-    grid-template-columns: 1fr 10% 10%;
-    font-weight: 600;
-    color: white;
-  }
-  .shell-drinks__item span {
-    text-align: right;
-  }
-  .shell-drinks__info {
-    font-style: italic;
-    margin: 5px 0px 10px 0px;
-    padding: 2px;
-    color: white;
-  }
+      .shell-drinks {
+        padding: 5px 0;
+      }
+      .shell-drinks__item {
+        display: grid;
+        grid-template-columns: 1fr 10% 10%;
+        font-weight: 600;
+        color: white;
+      }
+      .shell-drinks__item span {
+        text-align: right;
+      }
+      .shell-drinks__info {
+        font-style: italic;
+        margin: 5px 0px 10px 0px;
+        padding: 2px;
+        color: white;
+      }
 
-  @media (min-width: 740px) {
-    .menu {
-      width: 100%;
-      max-width: 1180px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(9, 1fr);
-      grid-template-rows: repeat(7, -webkit-min-content);
-      grid-template-rows: repeat(7, min-content);
-      grid-gap: 1em;
-    }
-    .menu h2 {
-      grid-column: 1/12;
-      grid-row: 1/2;
-    }
-    .menu__block picture {
-      height: 100%;
-      max-height: 400px;
-    }
-    .menu__block:nth-child(3) {
-      grid-column: 1/6;
-      grid-row: 2/3;
-    }
-    .menu__block:nth-child(2) {
-      grid-column: 6/18;
-      grid-row: 2/3;
-    }
-    .menu__block:nth-child(5) {
-      grid-column: 1/6;
-      grid-row: 4/5;
-    }
-    .menu__block:nth-child(4) {
-      grid-column: 6/18;
-      grid-row: 4/5;
-    }
-    .menu__block:nth-child(6) {
-      grid-column: 1/6;
-      grid-row: 5/6;
-    }
-    .menu__block:nth-child(7) {
-      grid-column: 1/18;
-      grid-row: 6/7;
-    }
-    .menu__block:nth-child(7) ol {
-      -moz-column-count: 2;
-      column-count: 2;
-      -moz-column-gap: 3em;
-      column-gap: 3em;
-    }
-  }
-  footer {
-    padding: 1.4em;
-    width: 100%;
-    max-width: 1180px;
-    text-align: center;
-    margin: 0 auto;
-    color: #f2e2b8;
-    background-color: #331803;
-    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
-  }
-  footer a {
-    text-decoration: none;
-    color: inherit;
-    text-decoration: underline;
-  }
-</style>
-<!-- <center><img src="burbro.png" alt=""></center> -->
-&nbsp;
-<div class="menu" id="app">
-  <div class="menu__block header" style="margin-left: 100px">
-    <img src="burbro.png" alt="" height="340px" width="225px" />
-  </div>
+      @media (min-width: 740px) {
+        .menu {
+          width: 100%;
+          max-width: 1180px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(9, 1fr);
+          grid-template-rows: repeat(7, -webkit-min-content);
+          grid-template-rows: repeat(7, min-content);
+          grid-gap: 1em;
+        }
+        .menu h2 {
+          grid-column: 1/12;
+          grid-row: 1/2;
+        }
+        .menu__block picture {
+          height: 100%;
+          max-height: 400px;
+        }
+        .menu__block:nth-child(3) {
+          grid-column: 1/6;
+          grid-row: 2/3;
+        }
+        .menu__block:nth-child(2) {
+          grid-column: 6/16;
+          grid-row: 2/3;
+        }
+        .menu__block:nth-child(5) {
+          grid-column: 1/6;
+          grid-row: 4/5;
+        }
+        .menu__block:nth-child(4) {
+          grid-column: 6/16;
+          grid-row: 4/5;
+        }
+        .menu__block:nth-child(6) {
+          grid-column: 1/6;
+          grid-row: 5/6;
+        }
+        .menu__block:nth-child(7) {
+          grid-column: 1/16;
+          grid-row: 6/7;
+        }
+        .menu__block:nth-child(7) ol {
+          -moz-column-count: 2;
+          column-count: 2;
+          -moz-column-gap: 3em;
+          column-gap: 3em;
+        }
+      }
+      footer {
+        padding: 1.4em;
+        width: 100%;
+        max-width: 1180px;
+        text-align: center;
+        margin: 0 auto;
+        color: #f2e2b8;
+        background-color: #331803;
+        background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+      }
+      footer a {
+        text-decoration: none;
+        color: inherit;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <center><img src="burbro.png" alt=""></center> -->
+    &nbsp;
+    <div class="menu" id="app">
+      <div class="menu__block header">
+        <img src="burbro.png" alt="" height="340px" width="225px" />
+      </div>
 
-  <div class="menu__block">
-    <h1>Nasi Ayam</h1>
+      <div class="menu__block">
+        <h1>Nasi Ayam</h1>
 
-    <ol>
-      <li v-for="item in menuNasiAyam" :item="item">
-        <menu-item :item="item"></menu-item>
-      </li>
-    </ol>
-  </div>
+        <ol>
+          <li v-for="item in menuNasiAyam" :item="item">
+            <menu-item :item="item"></menu-item>
+          </li>
+        </ol>
+      </div>
 
-  <div class="menu__block">
-    <h1>Nasi Goreng</h1>
-    <ol>
-      <li v-for="item in menuNasiGoreng" :item="item">
-        <menu-item :item="item"></menu-item>
-      </li>
-    </ol>
-  </div>
+      <div class="menu__block">
+        <h1>Nasi Goreng</h1>
+        <ol>
+          <li v-for="item in menuNasiGoreng" :item="item">
+            <menu-item :item="item"></menu-item>
+          </li>
+        </ol>
+      </div>
 
-  <div class="menu__block">
-    <h1>Nasi Indomie</h1>
-    <ol>
-      <li v-for="item in menuIndomie" :item="item">
-        <menu-item :item="item"></menu-item>
-      </li>
-    </ol>
-  </div>
-  <div class="menu__block">
-    <h1>Nasi Varian</h1>
-    <ol>
-      <li v-for="item in menuNasiVarian" :item="item">
-        <menu-item :item="item"></menu-item>
-      </li>
-    </ol>
-  </div>
-  <div class="menu__block">
-    <h1>Cemilan</h1>
-    <ol>
-      <li v-for="item in menuCemilan" :item="item">
-        <menu-item :item="item"></menu-item>
-      </li>
-    </ol>
-  </div>
+      <div class="menu__block">
+        <h1>Nasi Indomie</h1>
+        <ol>
+          <li v-for="item in menuIndomie" :item="item">
+            <menu-item :item="item"></menu-item>
+          </li>
+        </ol>
+      </div>
+      <div class="menu__block">
+        <h1>Nasi Varian</h1>
+        <ol>
+          <li v-for="item in menuNasiVarian" :item="item">
+            <menu-item :item="item"></menu-item>
+          </li>
+        </ol>
+      </div>
+      <div class="menu__block">
+        <h1>Cemilan</h1>
+        <ol>
+          <li v-for="item in menuCemilan" :item="item">
+            <menu-item :item="item"></menu-item>
+          </li>
+        </ol>
+      </div>
 
-  <div class="menu__block">
-    <h1>Minuman</h1>
-    <ol>
-      <li v-for="item in menuMinuman" :item="item">
-        <menu-item :item="item"></menu-item>
-      </li>
-    </ol>
-  </div>
+      <div class="menu__block">
+        <h1>Minuman</h1>
+        <ol>
+          <li v-for="item in menuMinuman" :item="item">
+            <menu-item :item="item"></menu-item>
+          </li>
+        </ol>
+      </div>
 
-  <div class="menu__block">
-    <picture>
-      <!-- <img src="https://res.cloudinary.com/dyxt6lafa/image/upload/c_fit,w_740/v1600505385/cpc-list-items/salad.jpg" alt /> -->
-    </picture>
-  </div>
-</div>
+      <div class="menu__block">
+        <picture>
+          <!-- <img src="https://res.cloudinary.com/dyxt6lafa/image/upload/c_fit,w_740/v1600505385/cpc-list-items/salad.jpg" alt /> -->
+        </picture>
+      </div>
+    </div>
 
-<footer>
-  <!-- <p>Menu courtesy of <a href="https://www.instagram.com/burbro.id" target="blank">The Coffee Club</a></p> -->
-</footer>
+    <footer>
+      <!-- <p>Menu courtesy of <a href="https://www.instagram.com/burbro.id" target="blank">The Coffee Club</a></p> -->
+    </footer>
 
-<template id="menuitem">
-  <div class="shell">
-    <p class="shell__item" v-if="item.name != ''">
-      {{ item.name }}<span v-if="item.price != ''">{{ item.price }}</span>
-    </p>
-    <p class="shell__info" v-if="item.info != ''">{{ item.info }}</p>
-  </div>
-</template>
+    <template id="menuitem">
+      <div class="shell">
+        <p class="shell__item" v-if="item.name != ''">
+          {{ item.name }}<span v-if="item.price != ''">{{ item.price }}</span>
+        </p>
+        <p class="shell__info" v-if="item.info != ''">{{ item.info }}</p>
+      </div>
+    </template>
 
-<template id="drinkmenu">
-  <div class="shell-drinks">
-    <p class="shell-drinks__item" v-if="item.name != ''">
-      {{ item.name }}
-      <span v-if="item.rprice != ''">{{ item.rprice }}</span>
-      <span v-if="item.lprice != ''">{{ item.lprice }}</span>
-    </p>
-    <p class="shell-drinks__info" v-if="item.info != ''">{{ item.info }}</p>
-  </div>
-</template>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
-<script>
-  const nasigoreng = [
-    {
-      name: "Nasi Goreng Telor",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Goreng Ayam",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Goreng Sosis",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Goreng Baksio",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Goreng Komplit",
-      price: "",
-      info: "",
-    },
-  ];
+    <template id="drinkmenu">
+      <div class="shell-drinks">
+        <p class="shell-drinks__item" v-if="item.name != ''">
+          {{ item.name }}
+          <span v-if="item.rprice != ''">{{ item.rprice }}</span>
+          <span v-if="item.lprice != ''">{{ item.lprice }}</span>
+        </p>
+        <p class="shell-drinks__info" v-if="item.info != ''">{{ item.info }}</p>
+      </div>
+    </template>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script>
+      const nasigoreng = [
+        {
+          name: "Nasi Goreng Telor",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Goreng Ayam",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Goreng Sosis",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Goreng Baksio",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Goreng Komplit",
+          price: "",
+          info: "",
+        },
+      ];
 
-  const indomie = [
-    {
-      name: "Internet",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Internet Keju",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Indomie Biasa",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Indomie Telor",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Indomie Kornet",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Indomie Spesial",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Mie Dog Dog",
-      price: "",
-      info: "",
-    },
-  ];
+      const indomie = [
+        {
+          name: "Internet",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Internet Keju",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Indomie Biasa",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Indomie Telor",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Indomie Kornet",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Indomie Spesial",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Mie Dog Dog",
+          price: "",
+          info: "",
+        },
+      ];
 
-  const nasivarian = [
-    {
-      name: "Nasi Omelet",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Magelangan",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Oseng Ati",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Oseng Ayam",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Orak Arik Telor",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Orak Arik Ayam",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Orak Arik Sosis",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Orak Arik Bakso",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Orak Arik Gorengan",
-      price: "",
-      info: "",
-    },
-  ];
+      const nasivarian = [
+        {
+          name: "Nasi Omelet",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Magelangan",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Oseng Ati",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Oseng Ayam",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Orak Arik Telor",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Orak Arik Ayam",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Orak Arik Sosis",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Orak Arik Bakso",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Orak Arik Gorengan",
+          price: "",
+          info: "",
+        },
+      ];
 
-  const nasiayam = [
-    {
-      name: "Nasi Ayam Bali Krispi",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Ayam Balap",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Ayam Mentega",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Ayam Asam Manis",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nasi Kulit Krispi",
-      price: "",
-      info: "",
-    },
-  ];
+      const nasiayam = [
+        {
+          name: "Nasi Ayam Bali Krispi",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Ayam Balap",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Ayam Mentega",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Ayam Asam Manis",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nasi Kulit Krispi",
+          price: "",
+          info: "",
+        },
+      ];
 
-  const cemilan = [
-    {
-      name: "Gorengan",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Mix Platter",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Kentang Goreng",
-      price: "",
-      info: "",
-    },
-  ];
+      const cemilan = [
+        {
+          name: "Gorengan",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Mix Platter",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Kentang Goreng",
+          price: "",
+          info: "",
+        },
+      ];
 
-  const minuman = [
-    {
-      name: "Good day freeze cookies",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Good day freeze hazelnut",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Good day freeze mocafrio",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Good day freeze oren",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Good day capuchino",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Good day all varian 3in1",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Marimas",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Nutrisari",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Coffee mix",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Susu putih/coklat ",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Es teh jumbo",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Es teh manis",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Es teh tawar",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Teh manis",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Teh tawar",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Lemon tea",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Teh tarik",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Drink beng beng",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Milo",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Extra joss",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Kopi hitam",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Susu jahe",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Jahe wangi",
-      price: "",
-      info: "",
-    },
-    {
-      name: "Chocolatos",
-      price: "",
-      info: "",
-    },
-    {
-      name: "White coffee",
-      price: "",
-      info: "",
-    },
-  ];
+      const minuman = [
+        {
+          name: "Good day freeze cookies",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Good day freeze hazelnut",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Good day freeze mocafrio",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Good day freeze oren",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Good day capuchino",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Good day all varian 3in1",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Marimas",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Nutrisari",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Coffee mix",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Susu putih/coklat ",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Es teh jumbo",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Es teh manis",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Es teh tawar",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Teh manis",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Teh tawar",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Lemon tea",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Teh tarik",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Drink beng beng",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Milo",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Extra joss",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Kopi hitam",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Susu jahe",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Jahe wangi",
+          price: "",
+          info: "",
+        },
+        {
+          name: "Chocolatos",
+          price: "",
+          info: "",
+        },
+        {
+          name: "White coffee",
+          price: "",
+          info: "",
+        },
+      ];
 
-  const MenuItem = Vue.component("menu-item", {
-    template: "#menuitem",
-    props: ["item"],
-  });
+      const MenuItem = Vue.component("menu-item", {
+        template: "#menuitem",
+        props: ["item"],
+      });
 
-  const DrinkMenu = Vue.component("drink-menu", {
-    template: "#drinkmenu",
-    props: ["item"],
-  });
+      const DrinkMenu = Vue.component("drink-menu", {
+        template: "#drinkmenu",
+        props: ["item"],
+      });
 
-  new Vue({
-    el: "#app",
-    data() {
-      return {
-        menuNasiGoreng: nasigoreng,
-        menuIndomie: indomie,
-        menuNasiVarian: nasivarian,
-        menuNasiAyam: nasiayam,
-        menuCemilan: cemilan,
-        menuMinuman: minuman,
-      };
-    },
-    components: {
-      "menu-item": MenuItem,
-      "drink-menu": DrinkMenu,
-    },
-    methods: {},
-  });
-</script>
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            menuNasiGoreng: nasigoreng,
+            menuIndomie: indomie,
+            menuNasiVarian: nasivarian,
+            menuNasiAyam: nasiayam,
+            menuCemilan: cemilan,
+            menuMinuman: minuman,
+          };
+        },
+        components: {
+          "menu-item": MenuItem,
+          "drink-menu": DrinkMenu,
+        },
+        methods: {},
+      });
+    </script>
+  </body>
+</html>
