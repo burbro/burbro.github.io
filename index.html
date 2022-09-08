@@ -262,7 +262,7 @@
       </div>
     </template>
 
-    <template id="drinkmenu">
+    <!-- <template id="drinkmenu">
       <div class="shell-drinks">
         <p class="shell-drinks__item" v-if="item.name != ''">
           {{ item.name }}
@@ -271,7 +271,7 @@
         </p>
         <p class="shell-drinks__info" v-if="item.info != ''">{{ item.info }}</p>
       </div>
-    </template>
+    </template> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
     <script>
       const nasigoreng = [
@@ -424,12 +424,12 @@
         },
         {
           name: "Mix Platter",
-          price: "Rp. 10.000,-",
+          price: "Rp. 14.000,-",
           info: "",
         },
         {
           name: "Kentang Goreng",
-          price: "Rp. 14.000,-",
+          price: "Rp. 7.000,-",
           info: "",
         },
       ];
@@ -590,10 +590,10 @@
         props: ["item"],
       });
 
-      const DrinkMenu = Vue.component("drink-menu", {
-        template: "#drinkmenu",
-        props: ["item"],
-      });
+      // const DrinkMenu = Vue.component("drink-menu", {
+      //   template: "#drinkmenu",
+      //   props: ["item"],
+      // });
 
       new Vue({
         el: "#app",
@@ -610,7 +610,7 @@
         },
         components: {
           "menu-item": MenuItem,
-          "drink-menu": DrinkMenu,
+          // "drink-menu": DrinkMenu,
         },
         methods: {},
       });
